@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر شادي | منتجات متنوعة</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:#f7f7f7;color:#222}
+header{background:#111;color:#fff;padding:20px;text-align:center}
+header h1{font-size:28px}
+header p{opacity:.7;margin-top:5px}
+.search{padding:15px;text-align:center}
+.search input{width:90%;max-width:500px;padding:12px;border-radius:25px;border:1px solid #ddd;font-size:16px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;padding:15px}
+.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:center;padding-bottom:12px}
+.card img{width:100%;height:160px;object-fit:cover}
+.card h3{margin:10px 5px;font-size:16px}
+.price{color:#e91e63;font-weight:bold;font-size:18px}
+.card button{background:#25D366;color:#fff;border:none;padding:10px 15px;border-radius:20px;margin-top:8px;cursor:pointer;font-size:14px;width:85%}
+footer{text-align:center;padding:20px;opacity:.6;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>🛍️ متجر شادي</h1>
+<p>منتجات متنوعة - توصيل سريع - اطلب عبر واتساب</p>
+</header>
+<div class="search"><input id="search" placeholder="ابحث عن منتج..." onkeyup="filter()"></div>
+<div class="grid" id="grid"></div>
+<footer>متجر شادي © 2026 - للطلب واتساب 717278871</footer>
+<script>
+const WA="967717278871";
+const products=[
+{name:"سماعة بلوتوث",price:"8,500 ريال",img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"},
+{name:"ساعة ذكية",price:"15,000 ريال",img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"},
+{name:"عطر رجالي فاخر",price:"12,000 ريال",img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"},
+{name:"نظارة شمسية",price:"6,500 ريال",img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"},
+{name:"حقيبة ظهر",price:"9,000 ريال",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+{name:"مصباح ليد",price:"4,500 ريال",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500"},
+];
+function render(list){document.getElementById('grid').innerHTML=list.map(p=>`<div class="card"><img src="${p.img}"><h3>${p.name}</h3><div class="price">${p.price}</div><button onclick="order('${p.name}')">اطلب عبر واتساب</button></div>`).join('');}
+function order(name){window.open(`https://wa.me/${WA}?text=${encodeURIComponent('مرحبا شادي، أريد طلب: '+name)}`,'_blank');}
+function filter(){let q=document.getElementById('search').value;render(products.filter(p=>p.name.includes(q)));}
+render(products);
+</script>
+</body>
+</html>
