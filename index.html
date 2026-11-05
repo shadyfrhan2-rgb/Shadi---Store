@@ -3,46 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر شادي | منتجات متنوعة</title>
+<title>Shadi Store - تشكيلة الشتاء</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-body{background:#f7f7f7;color:#222}
-header{background:#111;color:#fff;padding:20px;text-align:center}
-header h1{font-size:28px}
-header p{opacity:.7;margin-top:5px}
-.search{padding:15px;text-align:center}
-.search input{width:90%;max-width:500px;padding:12px;border-radius:25px;border:1px solid #ddd;font-size:16px;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;padding:15px}
-.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:center;padding-bottom:12px}
-.card img{width:100%;height:160px;object-fit:cover}
-.card h3{margin:10px 5px;font-size:16px}
-.price{color:#e91e63;font-weight:bold;font-size:18px}
-.card button{background:#25D366;color:#fff;border:none;padding:10px 15px;border-radius:20px;margin-top:8px;cursor:pointer;font-size:14px;width:85%}
-footer{text-align:center;padding:20px;opacity:.6;font-size:13px}
+body{font-family:Arial,sans-serif;background:#f3f4f6;margin:0;padding:0}
+header{background:#111827;color:#fff;text-align:center;padding:25px 15px}
+header h1{margin:0;font-size:28px}
+header p{color:#fbbf24;margin:5px 0 0}
+.banner{background:#f59e0b;text-align:center;padding:12px;font-weight:bold}
+h2{padding:15px 15px 0;color:#111827}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;padding:15px}
+.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);text-align:center;padding-bottom:12px}
+.card img{width:100%;height:200px;object-fit:cover}
+.card h3{margin:10px 5px 5px;font-size:16px}
+.price{color:#dc2626;font-weight:bold;font-size:17px;margin:5px}
+.btn{display:inline-block;background:#25D366;color:#fff;padding:9px 15px;border-radius:20px;text-decoration:none;font-weight:bold;margin-top:5px}
+footer{text-align:center;padding:20px;color:#666;font-size:13px}
 </style>
 </head>
 <body>
+
 <header>
-<h1>🛍️ متجر شادي</h1>
-<p>منتجات متنوعة - توصيل سريع - اطلب عبر واتساب</p>
+<h1>SHADI STORE 🔥❄️</h1>
+<p>تشكيلة الشتاء 2026 - رجالي + نسائي - صنعاء</p>
 </header>
-<div class="search"><input id="search" placeholder="ابحث عن منتج..." onkeyup="filter()"></div>
-<div class="grid" id="grid"></div>
-<footer>متجر شادي © 2026 - للطلب واتساب 717278871</footer>
-<script>
-const WA="967717278871";
-const products=[
-{name:"سماعة بلوتوث",price:"8,500 ريال",img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"},
-{name:"ساعة ذكية",price:"15,000 ريال",img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"},
-{name:"عطر رجالي فاخر",price:"12,000 ريال",img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"},
-{name:"نظارة شمسية",price:"6,500 ريال",img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"},
-{name:"حقيبة ظهر",price:"9,000 ريال",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
-{name:"مصباح ليد",price:"4,500 ريال",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500"},
-];
-function render(list){document.getElementById('grid').innerHTML=list.map(p=>`<div class="card"><img src="${p.img}"><h3>${p.name}</h3><div class="price">${p.price}</div><button onclick="order('${p.name}')">اطلب عبر واتساب</button></div>`).join('');}
-function order(name){window.open(`https://wa.me/${WA}?text=${encodeURIComponent('مرحبا شادي، أريد طلب: '+name)}`,'_blank');}
-function filter(){let q=document.getElementById('search').value;render(products.filter(p=>p.name.includes(q)));}
-render(products);
-</script>
+
+<div class="banner">توصيل داخل صنعاء - اطلب الآن عبر واتساب</div>
+
+<h2>👨 قسم الرجالي</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"><h3>هودي شتوي ثقيل رجالي</h3><div class="price">20,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب هودي شتوي ثقيل رجالي">اطلب عبر واتساب</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=500"><h3>جاكيت شتوي نفخ رجالي</h3><div class="price">32,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب جاكيت شتوي نفخ رجالي">اطلب عبر واتساب</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?w=500"><h3>ترنج شتوي كامل رجالي</h3><div class="price">28,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب ترنج شتوي كامل رجالي">اطلب عبر واتساب</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=500"><h3>بلوفر صوف رجالي</h3><div class="price">16,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب بلوفر صوف رجالي">اطلب عبر واتساب</a></div>
+</div>
+
+<h2>👩 قسم النسائي</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1578681994506-b8f463449011?w=500"><h3>هودي نسائي شتوي</h3><div class="price">20,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب هودي نسائي شتوي">اطلب عبر واتساب</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500"><h3>جاكيت نسائي طويل</h3><div class="price">35,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب جاكيت نسائي طويل">اطلب عبر واتساب</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500"><h3>كوت / عباية شتوية</h3><div class="price">30,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب كوت شتوي نسائي">اطلب عبر واتساب</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=500"><h3>طقم شتوي - شال + قبعة + قفازات</h3><div class="price">10,000 ريال</div><a class="btn" href="https://wa.me/967717278871?text=مرحبا، اريد اطلب طقم شتوي">اطلب عبر واتساب</a></div>
+</div>
+
+<footer>Shadi Store © 2026 - صنعاء - واتساب: 717278871</footer>
+
 </body>
 </html>
